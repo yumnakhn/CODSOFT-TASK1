@@ -1,14 +1,532 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My first landing page</title>
-    </head>
-    <body>
+        
+        <!--webpage css-->
+		<style>
+        p {
+          color: black;
+        }
 
-    </body>
-    <footer>
-        <p>&copy; Yumna Khan. All Rights Reerved.</p>
-    </footer>
+        body { 
+          background-color: rgb(231, 202, 202);
+          color:rgb(37, 34, 34);
+          font-family:Arial, Helvetica, sans-serif;
+		  position:relative;
+		  align-items: center;
+          
+        }
+        
+        * {
+	  	    font-size: 30px;
+	        font-weight: 700;
+	        color: black;
+			position:relative;
+			align-items:center;
+			font-family: sans-serif;
+        }
+
+        nav ul {
+	       display: flex;
+	       list-style: none;
+		   
+        }
+
+		
+
+         nav ul li {
+	        padding: 8px 15px;
+	        border-radius: 10px;
+	        transition: 0.5s ease-in;
+        }
+
+        nav ul li a {
+	 display: none;
+}
+
+/* responsive navbar css */
+@media screen and (max-width: 600px) {
+	nav .sideMenuButton {
+		display: flex;
+	}
+
+	nav .navbar {
+		display: none;
+	}
+
+	.sideNavigationBar {
+		display: block !important;
+	}
+}
+
+.sideNavigationBar {
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0%;
+	background-color: rgb(231, 148, 38);
+	overflow-x: hidden;
+	transition: 0.3s ease-in;
+	padding-top: 60px;
+	display: none;
+}
+
+.sideNavigationBar a {
+	padding: 8px 8px 8px 40px;
+	display: block;
+	font-size: 25px;
+	font-weight: 500;
+	color: #9c1616;
+	transition: 0.3s;
+	text-decoration: none;
+}
+
+.sideNavigationBar a button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: rgb(100, 198, 236);
+	font-size: 16px;
+	border-style: none;
+	font-weight: 700;
+}
+
+.sideNavigationBar a:hover {
+	color: white;
+}
+
+.sideNavigationBar .closeButton {
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2% 5%;
+}
+
+.line .side1 {
+	padding-right: 50px;
+}
+
+.side1 h1 {
+	font-size: 40px;
+	margin-bottom: 10px;
+	color: rgb(173, 24, 173);
+}
+
+.side1 button {
+	width: 200px;
+	padding: 12px 20px;
+	border-radius: 20px;
+	border-style: none;
+	color: black;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Header content responsive */
+@media screen and (max-width: 980px) {
+	.side2 img {
+		width: 350px;
+	}
+
+	.side1 h1 {
+		font-size: 40px;
+	}
+
+	.side1 p {
+		font-size: 17px;
+	}
+
+	.line {
+		margin-top: 80px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.side1 h1 {
+		font-size: 35px;
+	}
+
+	.line {
+		flex-direction: column;
+	}
+
+	.line .side1 {
+		padding: 30px;
+	}
+}
+
+/* section */
+
+section .topic a {
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.about .boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.about .boxes .box {
+	margin: 10px 20px;
+	max-width: calc(100% / 3 - 50px);
+	text-align: center;
+	border-radius: 12px;
+	padding: 30px 10px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+	cursor: default;
+}
+
+/* Contact Page */
+
+.contact {
+	padding: 20px;
+}
+
+.contact .content {
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.content .title {
+	width: 80%;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+.title {
+	margin-bottom: 30px;
+	margin-left: 80px;
+}
+
+.contactMenu {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.input2 {
+	margin-top: 10;
+}
+
+.label1 {
+	font-size: 18px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	font-weight: bolder;
+}
+
+.contactMenu .input1 input {
+	border-radius: 13px;
+	padding: 6px;
+}
+
+.input2 input {
+	border-color: rgb(252, 244, 244);
+	width: 400px;
+}
+
+.button {
+	margin-top: 12px;
+	margin-left: 5px;
+}
+
+.button button {
+	width: 162px;
+	height: 35px;
+	border-radius: 12px;
+	border-color: transparent;
+}
+
+.button button:hover {
+	background-color: #8cc099;
+}
+
+button {
+	width: 162px;
+	height: 35px;
+	border-radius: 12px;
+	border-color: transparent;
+}
+
+button:hover {
+	background-color: #8cc099;
+}
+
+.rightside1 {
+	display: flex;
+	flex-direction: column;
+	margin-left: 300px;
+}
+
+.title1 {
+	font-size: 18px;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	font-weight: bolder;
+}
+
+.content1 {
+	width: 450px;
+	margin-top: 2px;
+	color: grey;
+}
+
+/* Footer */
+footer {
+	background: var(--primary-color);
+	padding: 15px 0;
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+}
+
+footer .footer span {
+	font-size: 17px;
+	font-weight: 400;
+	color: var(--white-color);
+}
+
+footer .footer span a {
+	font-weight: 500;
+	color: var(--white-color);
+}
+
+footer .footer span a:hover {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 1060px) {
+	.contactMenu {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.rightside1 {
+		display: flex;
+		flex-direction: column;
+		margin-left: 0px;
+	}
+
+	.content1 {
+		width: 100%;
+		margin-top: 2px;
+		color: grey;
+	}
+
+	.side2 img {
+		width: 95%;
+		height: 90%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.side2 img {
+		width: 100%;
+	}
+
+	section .topic a {
+		font-size: 20px;
+	}
+
+	section .topic p {
+		font-size: 5px;
+	}
+
+	.about .boxes {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.about .boxes .box {
+		max-width: 70%;
+	}
+}
+
+.social {
+  text-align: center;
+  margin: 2rem;
+}
+
+.socicons {
+  font-size: 1.3rem;
+}
+        
+</style>
+
+    <title>Codsoft Landing Page</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+        <div class="heading">Codsoft </div> 
+		<br><div class="heading2">Code. Create. Succeed.</div><br>
+        <span class="sideMenuButton" 
+        onclick="openNavbar()">
+  </span>
+  </nav>
+
+  <!-- Side navigation bar for responsive website-->
+  <div class="sideNavigationBar" id="sideNavigationBar">
+    <a href="#" class="closeButton"
+     onClick="closeNavbar()">
+     
+    </a>
+        <ul><br><li><a href="#">Home</a></li><br>
+        <br><li><a href="#">About</a></li><br>
+        <br><li><a href="#">Sign up</a></li><br></ul>
+  </div>
+   
+  <!--Content-->
+  <div class="line" id="Home">
+    <div class="side1">
+        <h1>CodSoft are IT services and IT consultancy  that specializes in creating innovative solutions for businesses.</h1><br>
+        <button>
+           <a href="https://www.codsoft.in/">Explore more</a><br> 
+        </button>
+    </div>
+    <div class="side2">
+        <img src="https://seranking.com/es/blog/wp-content/uploads/sites/13/2020/04/Landing-page.png" width="500">
+    </div>
+  </div>
+
+  <section class="about" id="My Projects">
+    <div class="content">
+        <div class="title">
+            <br><h1><span>Internship Positions</span></h1><br>
+        </div>
+        <div class="boxes">
+            <div class="box">
+                <div class="topic">
+                    <h3><a href="" target="_blank">Web development</a></h3>
+                </div>
+              <h5><p>
+                Provides practical work experience and an introduction to crafting and enhancing web-base systems. 
+				This opportunity offers engaging challenges and real-world projects, allowing you to gain hands-on experience in the dynamic fields of web and app development.
+              </p></h5>
+            </div>
+
+         <div class="box">
+            <div class="topic">
+                <a href="" target="_blank">
+                    Android development
+                </a>
+            </div>
+           <h6> <p>
+              Discover the simplicity of creating your first app with CODSOFT and unlock a world of endless possibilities in the realm of mobile innovation.  
+            </p></h6>
+         </div>
+
+         <div class="box">
+           <div class="topic">
+             <a href="" target="_blank">UI/UX Design</a>
+           </div>
+           <p>
+            Enroll in our intensive 4-week internship, where you'll acquire knowledge in web application development and deployment.
+		</p>
+          </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+   <div class="content">
+    <div class="title"><span>Sign Up</span></div>
+    <div class="contactMenu">
+      <div class="input1">
+        <div class="label1">Your Name</div>
+        <div class="input2">
+          <input type="text" placeholder="Enter your name here">
+        </div>
+        <div class="label1"><label>Your email</label></div>
+        <div class="input2">
+          <input typr="text" placeholder="Enter your email here">
+        </div>
+        <div class="label1">
+          <label>Your password</label>
+        </div>
+        <div class="input2">
+          <input typr="text" placeholder="Enter your password here">
+        </div>
+        <div class="button">
+          <button>Sign Up</button>
+        </div>
+      </div>
+      <div class="input3">
+        <div class="rightside1">
+          <div class="title1">
+            <span>
+              Contact us
+            </span>
+          </div>
+          <div class="content1">
+            Kolkata, West Bengal.
+			
+          </div>
+          <div class="title1">
+            <span>Email</span>
+          </div>
+          <div class="content1">
+            intern24codsoft@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+  </section>
+
+    <!-- Email subscription -->
+    <section class="sub" id="sub">
+        <h3>Subscribe for updates!</h3>
+        <form action="#">
+          <input
+            type="email"
+            name="email"
+            id="email-sub"
+            class="email-sub"
+            required
+          />
+          <input
+            type="submit"
+            value="Subscribe"
+            id="submit-btn"
+            class="submit-btn"
+          />
+        </form>
+  </section>
+
+ <!-- Footer section-->
+ <footer>
+  <div class="footer">
+    
+  <h4><p>&copy; Yumna Khan. All Rights Reserved.</p> </h4>
+</div>
+</footer>
+
+    <!-- Web page script -->
+    <script src="java"></script>
+  </body>
 </html>
+        
+
+    
+
+
+   
